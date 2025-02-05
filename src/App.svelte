@@ -1,5 +1,5 @@
 <script>
-  import { fly } from "svelte/transition";
+  import { fade, fly } from "svelte/transition";
   import { onMount } from "svelte";
 
   import About from "./lib/About.svelte";
@@ -10,7 +10,7 @@
   import Blogs from "./lib/Blogs.svelte";
 
   let visibleAbout = $state(false);
-  let visibleProjects = $state(false);
+  let visibleProjects = $state(true);
   let visibleServices = $state(false);
   let visibleBlogs = $state(false);
 
@@ -50,7 +50,7 @@
   });
 </script>
 
-<main transition:fly={{ y: 200, duration: 1000 }}>
+<main in:fade>
   {#if !visibleAbout && !visibleProjects && !visibleServices && !visibleBlogs}
     <div class="grid h-full w-full absolute grid-flow-col grid-rows-2">
       <HomeItem
@@ -94,8 +94,10 @@
       ></HomeItem>
     </div>
 
-    <ToggleTheme toggleTheme={() => toggleTheme()} {isDarkMode}></ToggleTheme>
   {/if}
+
+  <ToggleTheme toggleTheme={() => toggleTheme()} {isDarkMode}></ToggleTheme>
+
 
   {#if visibleAbout || visibleProjects || visibleServices || visibleBlogs}
     <button

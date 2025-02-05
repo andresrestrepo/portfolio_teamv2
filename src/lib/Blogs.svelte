@@ -3,7 +3,7 @@
   import HeaderPage from "./util/HeaderPage.svelte";
 </script>
 
-<div in:fly={{ y: 300, x: -300 }}>
+<div in:fly={{ y: 300, x: 300 }}>
   <HeaderPage
     letter="b"
     next="logs"

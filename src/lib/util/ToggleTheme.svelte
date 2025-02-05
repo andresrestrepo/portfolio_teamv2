@@ -2,13 +2,13 @@
   let {toggleTheme, isDarkMode} = $props()
 </script>
 
-<div class="flex items-center justify-center min-h-screen">
+<div class="relative">
   <div
-    class=" relative w-25 h-25 bg-gray-50 dark:bg-gray-900 grid place-items-center p- rounded-xl transition duration-500 hover:scale-125"
+    class=" fixed z-200 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-30 h-15 mt-10 grid place-items-center  rounded-xl transition duration-500 hover:scale-125"
   >
     <button
       onclick={toggleTheme}
-      class="relative w-16 h-8 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-between p-1 transition-colors duration-300 cursor-pointer "
+      class=" relative w-16 h-8 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-between p-1 transition-colors duration-300 cursor-pointer "
       aria-label="Toggle dark mode"
     >
       <!-- Sliding indicator -->
