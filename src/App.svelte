@@ -107,6 +107,7 @@
         visibleProjects = false;
         visibleServices = false;
         visibleBlogs = false;
+        window.scrollTo({ top: 0 });
       }}>X</button
     >
   {/if}
